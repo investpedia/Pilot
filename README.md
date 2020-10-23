@@ -24,3 +24,6 @@ On my Youtube Channel you can find how to investing, trading on financial intern
 Learning how to code for make automation, learning fandamentals, stocks, forex, bourse, ...
 
 How to Ai work and make an ai for trading. 
+
+## 
+### START 20 Oct 2020
