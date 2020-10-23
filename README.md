@@ -1,5 +1,5 @@
 # Pilot
-information about me, and about my work
+information about me, and about my work.
 
 
 ## License
@@ -7,7 +7,8 @@ all codes on this git, under the MIT License.
 
 
 ### Road map
-how to make your self better by using mql (meta qoute languge) in persian languge on youtube.
+how to make your self better by using mql (meta qoute language) in persian language on youtube.
+
 find all ressurces on this github account: https://github.com/investpedia/
 
 
