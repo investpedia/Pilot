@@ -1,6 +1,9 @@
 # Major Methods
 MQL4: Important Functions
 
+##
+### Import informations
+from this folder, just including "include.inc.mqh" to main program.
 
 ##
 ### Updates
