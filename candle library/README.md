@@ -5,18 +5,18 @@
    [   #include <custom/CandlePatterns.mqh>   ]
    
 ##
-/*=========================================
-||            Content Table              ||
-=========================================*/
 
-###PATTERNS: (one candle)                    [TYPE]
+## ||            Content Table              ||
+##
+
+### PATTERNS: (one candle)                    [TYPE]
 
 _ Bullish                     cBullish(i)  
 
 _ Bearish                     cBearish(i)
 
 ##
-###NORMAL MODES:                         [STANDARD]
+### NORMAL MODES:                         [STANDARD]
 
 _ Doji                        cDojiNormal(i)
 
@@ -25,7 +25,7 @@ _ Hammer                      cBullishHammer(i)
 _ ShotingStar                 cBearishHammer(i)
 
 ##
-###_ BULLISH:                        [BULISH TYPES]
+### _ BULLISH:                        [BULISH TYPES]
 
 __ Bullish Engulfing          cBullishEngulfing(i)
 
@@ -44,7 +44,7 @@ __ Piercing Line              cPiercingLine(i)
 __ Bullish Homing Pidgeon     cBullishHomingPidgeon(i)
 
 ##
-###_ BEARISH:                        [BEARISH TYPE]
+### _ BEARISH:                        [BEARISH TYPE]
 
 __ Bearish ThreeSide Down     cBearishThreeSideDown(i)
 
@@ -59,7 +59,7 @@ __ Dark Cloud Cover           cDarkCloudCover(i)
 __ Bearish Hawk               cBearishHawk(i)
 
 ##
-###_ SIGNAL:                         [CROWS SIGNAL]
+### _ SIGNAL:                         [CROWS SIGNAL]
 
 __ Three Black Crows          cThreeBlackCrows(i)
 
