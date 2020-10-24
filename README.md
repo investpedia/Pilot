@@ -21,9 +21,9 @@ if you want invest or trade on markets, follow(subscribe) me on Youtube.
 
 On my Youtube Channel you can find how to investing, trading on financial international markets.
 
-Learning how to code for make automation, learning fandamentals, stocks, forex, bourse, ...
+Learning how to code for make automation, learning fandamentals, stocks, forex, bourse, expert adviser, robot, algo trade, ...
 
 How to Ai work and make an ai for trading. 
 
 ## 
-### START 29 Oct 2020
+### START project at: 29 Oct 2020
