@@ -1,0 +1,24 @@
+Lesson 11
+
+/*******************************************************************
+-> Loop : do while
+*******************************************************************/
+do
+   operator;
+while(expression);
+
+Example:
+
+//--- Calculate the Fibonacci series
+   int counterFibonacci=15;
+   int i=0,first=0,second=1;
+   int currentFibonacciNumber;
+   do
+     {
+      currentFibonacciNumber=first+second;
+      Print("i = ",i,"  currentFibonacciNumber = ",currentFibonacciNumber);
+      first=second;
+      second=currentFibonacciNumber;
+      i++; // without this operator an infinite loop will appear!
+     }
+   while(i<counterFibonacci && !IsStopped());

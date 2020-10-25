@@ -1,0 +1,56 @@
+Lesson 13
+
+/*******************************************************************
+-> Preprocessor
+*******************************************************************/
+1- #define
+	using for make Macro
+	#define identifier expression       // parameter-free form
+	example:	
+		#define ABC    100
+		Print(ABC);	   // 100
+
+EXAMPLE:
+
+#define MACRO
+void func1()
+  {
+#ifdef MACRO
+   Print("MACRO is defined in ",__FUNCTION__);   
+#else
+   Print("MACRO is not defined in ",__FUNCTION__);
+#endif
+  }
+#undef MACRO
+void OnStart()
+  {
+   func1();
+  }
+  // result: MACRO is defined in func1
+  
+// ++++++++++++++++++++++++++++++++++++++
+2- #property
+	#property version     "3.70"      // Current version of the Expert Advisor
+	#property description "ZigZag universal with Pesavento Patterns"
+	// file with the data to be read by an Expert Advisor
+	#property tester_file "trade_patterns.csv"
+	// file with a custom indicator specified in iCustom() as a variable    
+	#property tester_indicator "smoothed_ma.ex4"  
+
+// ++++++++++++++++++++++++++++++++++++++
+3- #include
+	#include <file_name.exp>	// include from include directory
+	#include "file_name.exp" 
+
+// ++++++++++++++++++++++++++++++++++++++ 
+4- #import
+
+#import "file_name"
+    func1 define;
+    func2 define;
+    ...
+    funcN define;
+#import
+
+// ++++++++++++++++++++++++++++++++++++++
+5- #ifdef, #ifndef, #else, #endif

@@ -1,0 +1,163 @@
+Lesson 12
+
+/*******************************************************************
+-> FUNCTIONS
+*******************************************************************/
+Functions:
+
+function_header()
+  {
+   instructions
+  }
+
+Types:
+1- returned functions
+int, string, double, bool, ...
+int functionName(int i, int j){
+	int a=i+j;
+	return(a);
+}
+
+2- not return (void) functions
+void functionName(string s){
+	s="mql programmer";
+	Print("i am "+s);
+}
+
+// ++++++++++++++++++++++++++++++++++++++
+Function call:
+function_name (x1, x2,..., xn)
+
+Examples:
+int start()
+  {
+   double some_array[4]={0.3, 1.4, 2.5, 3.6};
+   double a=linfunc(some_array, 10.5, 8);
+   //...
+  }
+double linfunc(double x[], double a, double b)
+  {
+   return (a*x[0] + b);
+  }
+
+Examples:
+
+void somefunc(double init,
+              double sec=0.0001, //set default values
+              int level=10);  
+//...
+somefunc();                      // Wrong call. The first parameter must be presented.
+somefunc(3.14);                  // Correct call
+somefunc(3.14,0.0002);           // Correct call
+somefunc(3.14,0.0002,10);        // Correct call
+
+Note:
+When calling a function, one may not skip parameters, even those having default values:
+
+somefunc(3.14, , 10);           // Wrong call -> the second parameter was skipped.
+
+// ++++++++++++++++++++++++++++++++++++++
+Passing Parameters:
+//| Passing parameters by value                                      
+double FirstMethod(int i,int j)
+  {
+   double res;
+//---
+   i*=2;
+   j/=2;
+   res=i+j;
+//---
+   return(res);
+  }
+//| Script program start function                                    
+void OnStart()
+  {
+//---
+   int a=14,b=8;
+   Print("a and b before call:",a," ",b);
+   double d=FirstMethod(a,b);
+   Print("a and b after call:",a," ",b);
+  }
+//--- Result of script execution
+//  a and b before call: 14 8
+//  a and b after call: 14 8
+
+
+
+// ++++++++++++++++++++++++++++++++++++++
+Function Overloading:
+
+Examples:
+double  func(double a, int b){
+	double sum=a+b;
+	return(sum);
+}
+double  func(double a, double b=2.2){
+	double sum=a+b;
+	return(sum);
+}
+int  func(int a, int b){
+	int sum=a+b;
+	return(sum);
+}
+
+void OnStart()
+  {
+//---
+   int    a[5]=		{1,2,3,4,5};
+   double b[5]=		{1.1,2.2,3.3,4.4,5.5};
+   double first=	func(a[2],5);
+   double second=	func(b[4],5);
+   double third=	func(a[4],a[2]);
+   Print("first = ",first," --  second = ",second," --  third = ",third);
+  }
+
+
+// ++++++++++++++++++++++++++++++++++++++
+Imported functions:
+
+Examples:
+
+#import "user32.dll"
+  int     MessageBoxW(int hWnd ,string szText,string szCaption,int nType);
+  int     SendMessageW(int hWnd,int Msg,int wParam,int lParam);
+#import "lib.ex4"
+  double  round(double value);
+#import
+
+then need to call function was imported.
+
+
+// ++++++++++++++++++++++++++++++++++++++
+Exporting Functions:
+
+A function declared in a mql4 program with the export postmodifier can be used 
+in another mql4 program. Such a function is called exportable, 
+and it can be called from other programs after compilation.
+
+int Function() export
+  {
+  }
+
+This modifier orders the compiler to add the function into the table of EX4 functions 
+exported by this ex4 file. Only function with such a modifier are accessible ("visible") 
+from other mql4 programs.
+
+The library property tells the compiler that the EX4-file will be a library, 
+and the compiler will show it in the header of EX4.
+
+All functions that are planned as exportable ones must be marked with the export modifier.
+
+When compiling libraries in the strict mode, the export modifier should be added for each 
+exported function, otherwise the function will not be accessible from outside.
+
+// ++++++++++++++++++++++++++++++++++++++
+Event Handling Functions:
+
+like:
+	void OnStart();
+	void OnInit();
+	void OnDeinit(const int reason);
+	void OnTick();
+	void OnTimer();
+	

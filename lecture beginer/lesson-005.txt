@@ -1,0 +1,181 @@
+Lesson 5
+/*******************************************************************
+-> Data Types
+*******************************************************************/
+Data Types:
+
+Any program operates with data. Data can be of different types depending on their purposes. 
+For example, integer data are used to access to array components. 
+Price data belong to those of double precision with floating point. 
+This is related to the fact that no special data type for price data is provided in MQL4.
+
+Data of different types are processed with different rates. 
+Integer data are processed at the fastest. To process the double precision data, 
+a special co-processor is used. 
+However, because of complexity of internal representation of data with floating point, 
+they are processed slower than the integer ones.
+
+String data are processed at the longest because of dynamic computer memory allocation/reallocation.
+
+The basic data types are:
+
+integers (char, short, int, long, uchar, ushort, uint, ulong);
+logical (bool);
+literals (ushort);
+strings (string);
+floating-point numbers (double, float);
+color (color);
+date and time (datetime);
+enumerations (enum).
+Complex data types are:
+
+structures;
+classes.
+
+/*----------------------*/
+integer data types:
+type		size(bytes)		min value					max value 		
+char 		1 				-128 						127
+uchar 		1 		 		0 							255
+bool		1				0 false 					1 true
+short		2				-32,768						32,767
+ushort		2				0							65535
+int			4				-2,147,483,648				2,147,483,647
+uint		4				0							4,294,967,298
+color		4				-1							16,777,215
+long		8				-9,233,372,036,854,775,808	9,223,372,036,854,775,807
+ulong		8				0							18,446,744,073,709,551,615
+datetime	8				0(1970.01.01 0:00:00)		32,535,244,799(3000,12,31 23:59:59)
+
+/*----------------------*/
+Character Constants:
+new line 			"\n"
+horizontal tab 		"\t"
+cariage return 		"\r"
+backslash			"\\"
+single quote		"\'"
+double quote		"\""
+
+/*----------------------*/
+Datetime Type:
+
+Examples:
+
+datetime NY=D'2015.01.01 00:00';     // Time of beginning of year 2015
+datetime d1=D'1980.07.19 12:30:27';  // Year Month Day Hours Minutes Seconds
+datetime d2=D'19.07.1980 12:30:27';  // Equal to D'1980.07.19 12:30:27';
+datetime d3=D'19.07.1980 12';        // Equal to D'1980.07.19 12:00:00'
+datetime d4=D'01.01.2004';           // Equal to D'01.01.2004 00:00:00'
+datetime compilation_date=__DATE__;             // Compilation date
+datetime compilation_date_time=__DATETIME__;    // Compilation date and time
+datetime compilation_time=__DATETIME__-__DATE__;// Compilation time
+//--- Examples of declarations after which compiler warnings will be returned
+datetime warning1=D'12:30:27';       // Equal to D'[date of compilation] 12:30:27'
+datetime warning2=D'';               // Equal to __DATETIME__
+
+The string representation of datetime type depends on compilation mode:
+
+  datetime date=D'2014.03.05 15:46:58';
+  string str="mydate="+date;
+//--- str="mydate=1394034418" - without #property strict
+//--- str="mydate=2014.03.05 15:46:58" - with #property strict
+
+/*----------------------*/
+Color Type:
+
+Examples:
+
+//--- Literals
+C'128,128,128'    // Gray
+C'0x00,0x00,0xFF' // Blue
+//color names
+clrRed               // Red
+clrYellow            // Yellow
+clrBlack             // Black
+//--- Integral representations
+0xFFFFFF          // White
+16777215          // White
+0x008000          // Green
+32768             // Green
+
+/*----------------------*/
+Bool Type:
+
+TRUE	True	true	1
+FALSE	False	false	0
+
+/*----------------------*/
+Enumerations:
+
+enum name of enumerable type
+  {
+   list of values
+  };
+
+
+Example:
+
+enum months  // enumeration of named constants
+   {
+    January,
+    February,
+    March,
+    April,
+    May,
+    June,
+    July,
+    August,
+    September,
+    October,
+    November,
+    December
+   };
+
+
+/*----------------------*/
+real data types:
+type		size(bytes)		min value					max value 
+float 		4				1.175494351e-38				3.402823466e+38
+double 		8				2.2250738585072014e-308		1.7976931348623158e+308
+
+/*----------------------*/
+String Type:
+
+Examples:
+
+string svar="This is a character string";
+string svar2=StringSubstr(svar,0,4);
+Print("Copyright symbol\t\x00A9");
+FileWrite(handle,"This string contains a new line symbols \n");
+string MT4path="C:\\Program Files\\MetaTrader 4";
+
+//--- Declare a long constant string
+   string HTML_head="<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\""
+                    " \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n"
+                    "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+                    "<head>\n"
+                    "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n"
+                    "<title>Trade Operations Report</title>\n"
+                    "</head>";
+//--- Output the constant string into log
+   Print(HTML_head);
+  }
+
+/*----------------------*/
+Void Type and NULL Constant:
+
+Syntactically the void type is a fundamental type along with types of :
+char, uchar, bool, short, ushort, int, uint, color, long, ulong, datetime, float, double and string. 
+This type is used either to indicate that the function does not return any value, 
+or as a function parameter it denotes the absence of parameters.
+
+The predefined constant variable NULL is of the void type. 
+It can be assigned to variables of any other fundamental types without conversion. 
+The comparison of fundamental type variables with the NULL value is allowed.
+
+Example:
+
+//--- If the string is not initialized, then assign our predefined value to it
+if(some_string==NULL) some_string="empty";
+
+/*----------------------*/

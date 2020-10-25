@@ -1,0 +1,49 @@
+Lesson 7
+
+/*******************************************************************
+-> Conditions : if
+*******************************************************************/
+IF:
+if(condition==true){
+	// Do something
+}
+
+
+ELSE:
+if(condition==true){
+	// Do something
+}else{
+	// Do something else
+}
+
+
+ELSE IF:
+if(condition==1){
+	// Do something
+}else if(condition==0){
+	// Do something else
+}
+
+
+ELSE IF ELSE:
+if(condition==1){
+	// Do something 1 :exam
+	return(true);
+}else if(condition==0){
+	// Do something 0 :exam
+	return(false);
+}else{
+	// Do something else :exam
+	return("wait");
+}
+
+SHORT IF`s: (if commands 1 line)
+ double true_range;
+ if(High==Low)true_range=0;               // if High and Low are equal
+ else true_range=(Close-Open)/(High-Low); // if the range is not null
+
+TERNARY OPRATOR ?:
+expression1 ? expression2 : expression3
+//--- normalize difference between open and close prices for a day range
+double true_range = (High==Low)?0:(Close-Open)/(High-Low);
+

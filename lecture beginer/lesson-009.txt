@@ -1,0 +1,27 @@
+Lesson 9
+
+/*******************************************************************
+-> Loop : while
+*******************************************************************/
+while(expression)
+  operator;
+
+//---
+expression1;
+while(expression2)
+  {
+   operator;
+   expression3;
+  };
+
+//---
+
+Example:
+
+while(k<n && !IsStopped())
+  {
+   y=y*x;
+   k++;
+  }
+
+

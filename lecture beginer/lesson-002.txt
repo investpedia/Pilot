@@ -1,0 +1,225 @@
+Lesson 2
+/*******************************************************************
+-> Operations and Expressions
+*******************************************************************/
+Operations and Expressions:
+
++ - * / %     Symbols of arithmetic operations
+&& ||         Symbols of logical operations
+= += *=       Characters assignment operators
+
+/*----------------------*/
+Expressions:
+An expression consists of one or more operands and operation symbols. 
+An expression can be written in several lines.
+
+Examples:
+a++; b = 10;         // several expressions are located in one line
+//---  one expression is divided into several lines
+x = (y * z) /
+    (w + 2) + 127;
+
+An expression that ends with a semicolon (;) is an operator.
+/*----------------------*/
+Arithmetic Operations:
+Arithmetic operations include additive and multiplicative operations:
+
+Sum of variables                        i = j + 2;
+Difference of variables                 i = j - 3;
+Changing the sign                       x = - x;
+Product of variables                    z = 3 * x;
+Division quotient                       i = j / 5;
+Remainder of division                   minutes = time % 60;
+Adding 1 to the variable value          i++;
+Adding 1 to the variable value          ++i;
+Subtracting 1 from the variable value   k--;
+Subtracting 1 from the variable value   --k;
+/*----------------------*/
+Assignment Operations:
+The value of the expression that includes the given operation is the value of 
+the left operand after assignment:
+
+Assigning the value of x to the y variable                              y = x;
+
+The following operations unite arithmetic or bitwise operations with operation of assignment:
+
+Adding x to the y variable                                             y += x;
+Subtracting x from the y variable                                      y -= x;
+Multiplying the y variable by x                                        y *= x;
+Dividing the y variable by x                                           y /= x;
+Reminder of division of the y variable by x                            y %= x;
+Shift of the binary representation of y to the right by x bits        y >>= x;
+Shift of the binary representation of y to the left by x bits         y <<= x;
+AND bitwise operation of binary representations of y and x             y &= x;
+OR bitwise operation of binary representations of y and x              y |= x;
+Excluding OR bitwise operation of binary representations of y and x    y ^= x;
+/*----------------------*/
+Operations of Relation:
+Boolean FALSE is represented with an integer zero value, while the boolean TRUE 
+is represented by any non-zero value.
+
+The value of expressions containing operations of relation or logical operations 
+is FALSE (0) or TRUE (1).
+
+True if a is equal to b                      a == b;
+True if a is not equal to b                  a != b;
+True if a is less than b                     a < b;
+True if a is greater than b                  a > b;
+True if a is less than or equal to b         a <= b;
+True if a is greater than or equal to b      a >= b;
+/*----------------------*/
+Boolean Operations:
+Logical Negation NOT (!)
+Operand of the logical negation (!) must be of arithmetic type. 
+The result is TRUE (1), if the operand value is FALSE (0); 
+and it is equal to FALSE (0), if the operand differs from FALSE (0).
+Example:
+if(!a) Print("not 'a'");
+
+Logical Operation OR (||)
+Logical OR operation (||) of x and y values. The expression value is TRUE (1)
+, if x or y value is true (not null). Otherwise - FALSE (0).
+Example:
+if(x<0 || x>=max_bars) Print("out of range");
+
+Logical Operation AND (&&)
+Logical operation AND (&&) of x and y values. The expression value is TRUE (1)
+, if the values of x and y are true (not null). Otherwise - FALSE (0).
+/*----------------------*/
+Bitwise Operations
+Complement to One
+Complement of the variable value up to one. The value of the expression contains 1 in all 
+digits where the variable value contains 0, and 0 in all digits where the variable contains 1.
+
+b = ~n;
+
+Example:
+
+   char a='a',b;
+   b=~a;
+   Print("a = ",a, "  b = ",b);  
+// The result will be:
+// a = 97   b = -98
+
+Right Shift
+The binary representation of x is shifted to the right by y digits. If the value to shift 
+is of the unsigned type, the logical right shift is made, i.e. the freed left-side bits 
+will be filled with zeroes.
+
+If the value to shift is of a sign type, the arithmetic right shift is made, i.e. the freed 
+left-side digits will be filled with the value of a sign bit (if the number is positive, 
+the value of the sign bit is 0; if the number is negative, the value of the sign bit is 1).
+
+x = x >> y;
+
+Example:
+
+   char a='a',b='b';
+   Print("Before:  a = ",a, "  b = ",b); 
+//--- shift to the right
+   b=a>>1;
+   Print("After:   a = ",a, "  b = ",b); 
+// The result will be:
+// Before:  a = 97   b = 98
+// After:   a = 97   b = 48
+
+Left Shift
+The binary representation of x is shifted to the left by y digits, the freed right-side digits 
+are filled with zeros.
+
+x = x << y;
+
+Example:
+
+   char a='a',b='b';
+   Print("Before:  a = ",a, "  b = ",b); 
+//--- shift to the left
+   b=a<<1;
+   Print("After:   a = ",a, "  b = ",b); 
+// The result will be:
+// Before:  a = 97   b = 98
+// After:   a = 97   b = -62
+
+It is not recommended to shift by the number of bits larger or equal to the length of the 
+variable shifted, because the result of such an operation is undefined.
+
+Bitwise AND Operation
+The bitwise AND operation of binary-coded x and y representations. The value of the 
+expression contains a 1 (TRUE) in all digits where both x and y contain non-zero, and it 
+contains 0 (FALSE) in all other digits.
+
+b = ((x & y) != 0);
+
+Example:
+
+   char a='a',b='b';
+//--- AND operation
+   char c=a&b;
+   Print("a = ",a,"  b = ",b);
+   Print("a & b = ",c);
+// The result will be:
+// a = 97   b = 98
+// a & b = 96
+
+Bitwise OR Operation
+The bitwise OR operation of binary representations of x and y. The value of the expression 
+contains 1 in all digits where x or y does not contain 0, and it contains 0 in all other digits.
+
+b = x | y;
+
+Example:
+
+   char a='a',b='b';
+//--- OR operation
+   char c=a|b;
+   Print("a = ",a,"  b = ",b);
+   Print("a | b = ",c);
+// The result will be:
+// a = 97   b = 98
+// a | b = 99
+
+Bitwise Exclusive Operation OR
+The bitwise exclusive OR (eXclusive OR) operation of binary representations of x and y. 
+The value of the expression contains a 1 in all digits where x and y have different 
+binary values, and it contains 0 in all other digits.
+
+b = x ^ y;
+
+Example:
+
+   char a='a', b='b';
+//--- Excluding OR operation
+   char c=a^b;
+   Print("a = ",a,"  b = ",b);
+   Print("a ^ b = ",c);
+// The result will be:
+// a = 97   b = 98
+// a ^ b = 3
+
+Bitwise operations are performed with integers only.
+/*----------------------*/
+Other operations:
+
+1. Indexing ( [] )
+When addressing the i-th element of the array, the expression value is the 
+value of a variable with the serial number i.
+
+Example:
+array[i] = 3; // Assign the value of 3 to i-th element of the array.
+
+2. Comma Operation ( , )
+Expressions separated by commas are executed from left to right. 
+All side effects of the left expression calculation can appear before the right 
+expression is calculated. The result type and value coincide with those of the 
+right expression. The list of parameters to be passed (see above) can be considered as an example.
+
+Example:
+for(i=0,j=99; i<100; i++,j--) Print(array[i][j]);
+
+3. Dot (.)
+4. Scope Resolution (::)
+
+
+Operation of Obtaining Data Type Size or Size of Any Data Type Object ( sizeof )
+Example:
+sizeof(expression)

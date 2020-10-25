@@ -1,0 +1,102 @@
+Lesson 3
+/*******************************************************************
+-> Variables
+*******************************************************************/
+Variables
+https://docs.mql4.com/basis/variables
+
+1- Declaring Variables:
+char, short, int, long, uchar, ushort, uint, ulong — integers;
+color — integer representing the RGB-color;
+datetime — the date and time, an unsigned integer containing the number of seconds since 0 hour January 1, 1970;
+bool — boolean values true and false;
+double — double-precision floating point number;
+float — single-precision floating point number;
+string — character strings.
+2- Complex or compound types:
+-- Struct 
+struct MyTime
+  {
+   int hour;    // 0-23
+   int minute;  // 0-59
+   int second;  // 0-59
+  };
+...
+MyTime strTime; // Variable of the previously declared structure MyTime
+
+-- Enum
+enum dayOfWeek 
+  {
+   S=0,     // Sunday
+   M=1,     // Monday
+   T=2,     // Tuesday
+   W=3,     // Wednesday
+   Th=4,    // Thursday
+   Fr=5,    // Friday,
+   St=6,    // Saturday
+  };
+  
+-- Arrays
+int    a[50];       // One-dimensional array of 50 integers.
+double m[7][50];    // Two-dimensional array of seven arrays,
+                    // each of them consisting of 50 numbers.
+MyTime t[100];      // Array containing elements such as MyTime
+
+/*----------------------*/
+To access members of structures and classes use the following qualifiers:
+public — allows unrestricted access to the variable or class method
+
+protected — allows access from methods of this class, as well as from methods of publicly 
+inherited classes. Other access is impossible;
+
+private — allows access to variables and class methods only from methods of the same class.
+
+virtual — applies only to class methods (but not to methods of structures) and tells the 
+compiler that this method should be placed in the table of virtual functions of the class.
+/*----------------------*/
+a. Local Variables
+int somefunc()
+  {
+   int ret_code=0;
+   ...
+   return(ret_code);
+  }
+
+b. Formal Parameters
+void func(int x, double y = 0.0, bool z = true)
+  {
+   ...
+  }
+for call formals:
+func(123, 0.5);
+
+c. Static Variables
+int somefunc()
+  {
+   static int flag=10;
+   ...
+   return(flag);
+  }
+
+d. Global Variables
+int GlobalFlag=10;   // Global variable
+int OnStart()
+  {
+   ...
+  }
+
+e. Input Variables (extend from global variable)
+//--- input parameters
+input int            MA_Period=13;
+input int            MA_Shift=0;
+input ENUM_MA_METHOD MA_Method=MODE_SMMA;
+
+f. Extern variables  (extend from global variable)(not variable, this is const)
+extern int            MA_Period=13;
+extern int            MA_Shift=0;
+extern ENUM_MA_METHOD MA_Method=MODE_SMMA;
+
+NOTE:
+Initialization of Variables
+Visibility Scope and Lifetime of Variables
+
