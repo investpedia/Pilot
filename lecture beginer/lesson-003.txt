@@ -6,7 +6,7 @@ Variables
 https://docs.mql4.com/basis/variables
 
 1- Declaring Variables:
-char, short, int, long, uchar, ushort, uint, ulong — integers;
+integers - char, short, int, long, uchar, ushort, uint, ulong;
 color — integer representing the RGB-color;
 datetime — the date and time, an unsigned integer containing the number of seconds since 0 hour January 1, 1970;
 bool — boolean values true and false;
