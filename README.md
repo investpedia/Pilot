@@ -26,4 +26,4 @@ Learning how to code for make automation, learning fandamentals, stocks, forex, 
 How to Ai work and make an ai for trading. 
 
 ## 
-### START project at: 29 Oct 2020
+### START project at: --/--/----
