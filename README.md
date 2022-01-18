@@ -1,5 +1,6 @@
 # Pilot
-information about me, and about my work.
+major conditional function`s of mql. 
+from 2016 - updated 2022
 
 
 ## License
@@ -26,4 +27,3 @@ Learning how to code for make automation, learning fandamentals, stocks, forex, 
 How to Ai work and make an ai for trading. 
 
 ## 
-### START project at: --/--/----
